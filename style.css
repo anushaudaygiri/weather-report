@@ -1,139 +1,56 @@
 *{
-    margin:0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+    font-family: "poppins", sans-serif;
     box-sizing: border-box;
-    font-family: "poppins",sans-serif;
 }
 body{
-    width:100%;
-    height: auto;
-    background: url("https://i.ibb.co/WGry01m/cd.jpg") no-repeat center/cover;
+    background-image: url("https://i.ibb.co/WGry01m/cd.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #weather{
-    width:80%;
-    /* height:800px ; */
-    margin:50px auto;
-    /* padding: 10px; */
-    border-radius: 10px;
-    border:2px solid black;
-    display: flex;
-
+   width: 85%; 
+   margin: 50px  auto;
+   border-radius: 10px;
+   border: 1px solid black;
+   display: flex;
 }
-#slide img{
-    width:150px;
-    height: 150px;
-    margin: 50px 80px ;
-}
+ #slide img{
+   height: 150px;
+   width: 150px;
+   margin: 50px 80px;
+} 
 #slide{
+    width: 40%;
     background-color: rgb(225,225,225,0.85);
-    width:30%;
+    position: relative;
 }
 #wrapper{
     flex-grow: 2;
     padding: 20px 40px;
-    background-color: whitesmoke;
+    background-color:whitesmoke;
+    /* border-radius: 10px; */  
 }
 #search{
-    display:flex;
-   padding: 10px;
+   display: flex;
+   padding: 20px;
    margin: 20px 20px;
 }
- input{
+input{
     padding: 10px;
     font-size: large;
     
-  
 }
 button{
     padding: 5px 15px;
-    background-color: rgb(31, 158, 208);
-    border: none;
-    color:white;
-    
-    /* font-size:bold  */
-
+    background-color: deepskyblue;
+    color: white;
+    border-style: none;
+    font-weight: bold;
 }
-#navbar{
-    display: flex;
-    justify-content: space-between;
-}
-ul li{
-    list-style: none;
-}
-ul li a{
-    color:black;
-    text-decoration: none;
-}
-ul li a:hover{
-    color:deepskyblue;
-}
-#days ul {
-    display: flex;
-    gap: 20px;
-    
-}
-#days ul li:hover{
-    color: blue;
-}
-#temperature-unit ul{
-    display: flex;
-    gap: 20px;
-    
-}
-#temperature-unit ul li{
-    border:2px solid black;
-    border-radius: 25px;
-    padding: 10px;
-    border-color: white;
-    background-color: white;
-}
-#temperature-unit ul li:hover{
-    background-color: black;
-    color:white
-}
-#week_report{
-    display: flex;
-    margin: 50px 0px;
-    flex-wrap: wrap;
-    gap:20px;
-   
-
-
-}
-.week{
-    height:150px ;
-    width:130px;
-    border:1px solid black;
-    background-color: white;
-    border-radius: 10px;
-    border-color: white;
-    text-align: center;
-    padding: 10px;
-    
-
-}
-.week img{
-    height: 70px;
-}
-#highlights{
-    display:flex;
-    margin: 50px 0PX;
-    flex-wrap: wrap;
-    gap:20px;
-}
-.status{
-    height:100px;
-    width:250px;
-    border:1px solid black;
-    background-color: white;
-    border-radius: 10px;
-    border-color: white;
-    /* margin:20px; */
-    padding: 5px;
-}
-.status h1{
-    margin-top: 15px;
-    text-align: center;
+div section p{
+    padding-left: 5px;
 }
 .temparature{
     display:flex;
@@ -167,48 +84,133 @@ ul li a:hover{
 
 }.condition_rain div li{
     width:20px;
-}.location{
-    display:flex;
+ }
+.location{
+     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 20px;
     gap:10px;
-    margin-top: 10px;
     padding-left: 30px;
-}
-.status p{
-    color:rgb(170,174,174);
-    font-size: x-large;
-}
-#footer{
-    text-align: center;
-}
+    position: absolute;
+    bottom: 30px;
+    
+} 
 
-/* today report */
-#today_report{
+#navbar{
     display: flex;
-    margin: 50px 0px;
-    flex-wrap: wrap;
-    gap:20px;
-   
-
-
+    justify-content: space-between;
 }
-.today{
-    height:150px ;
-    width:130px;
-    border:1px solid black;
+ul li{
+    list-style: none;
+    font-size: x-large;
+    cursor: pointer;
+}
+ul li a{
+    color:black;
+    text-decoration: none;
+}
+ul li a:hover{
+    color:deepskyblue
+}
+#days ul{
+    display: flex;
+    gap: 20px; 
+}
+#days ul li:hover{
+    color:deepskyblue;
+}
+#temperature-unit ul{
+    display: flex;
+    gap: 30px;
+}
+#temperature-unit ul li{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 50%;
     background-color: white;
+}
+#temperature-unit ul li:hover{
+    background-color: black;
+    color: white;
+}
+.week{
+    height: 150px;
+    width: 130px;
     border-radius: 10px;
-    border-color: white;
+    background-color: white;
     text-align: center;
     padding: 10px;
-    
-
+    font-size: small;
 }
-.today img{
+.week img{
     height: 70px;
+    /* width: 50px; */
 }
 .temp{
     display: flex;
     justify-content: center;
 }
+.temp p{
+    font-weight: bold;
+    font-size: large;
+}
+.today{
+    height: 150px;
+    width: 130px;
+     border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: small;
+}
+.today img{
+    height: 70px;
+    /* width: 50px; */
+}
+.today-report{
+    margin: 50px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.weeks-report{
+    margin: 50px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.highlight{
+    width: 270px;
+    /* height: 130px; */
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+.highlight p{
+    color: rgb(179, 174, 174);
+    font-weight: bold;
+    font-size: x-large;
+}
+.highlight h1{
+    margin-top: 20px;
+    text-align: center;
+    font-size: xx-large;
+}
+.highlight span{
+    margin-top: 20px;
+    text-align: left;
+}
+.highlights{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 50px 0px;
+}
+.footer{
+    text-align: center;
+}
+
+
+
