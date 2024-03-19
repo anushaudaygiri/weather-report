@@ -78,7 +78,9 @@ getPublicIp()
 // function to get weather data
 function getWeatherData(city, week = false) {
     fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=EJ6UBL2JEQGYB3AA4ENASN62J&contentType=json`,
+        // `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=EJ6UBL2JEQGYB3AA4ENASN62J&contentType=json`,
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}%7Bcity%7D?unitGroup=metric&key=PXHK7UTJZM6PNWFM9UYC4NDY8&contentType=json`,
+ 
         {
             method: "GET",
             headers: {},
@@ -304,17 +306,18 @@ function getVisibility(today) {
 function updateAirQualityStatus(today) {
     let airQuality=document.getElementById("airQality")
     let airQualityStatus=document.getElementById("airQualityStatus")
-    // console.log(data)
-    airQuality.innerText = today.winddir;
-    if (airQuality <= 50) {
+    let airquality=today.winddir
+    airQuality.innerText = airquality;
+    
+    if (airquality <=50) {
       airQualityStatus.innerText = "Good👌";
-    } else if (airQuality <= 100) {
+    } else if ( airquality>50 && airquality <= 100) {
       airQualityStatus.innerText = "Moderate😐";
-    } else if (airQuality <= 150) {
+    } else if ( airquality>100 && airquality <= 150) {
       airQualityStatus.innerText = "Unhealthy for Sensitive Groups😷";
-    } else if (airQuality <= 200) {
+    } else if ( airquality>150 && airquality <= 200) {
       airQualityStatus.innerText = "Unhealthy😷";
-    } else if (airQuality <= 250) {
+    } else if ( airquality>200 && airquality <= 250) {
       airQualityStatus.innerText = "Very Unhealthy😨";
     } else {
       airQualityStatus.innerText = "Hazardous😱";

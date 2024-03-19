@@ -131,6 +131,7 @@ ul li a:hover{
     border-radius: 50%;
     background-color: white;
 }
+
 #temperature-unit ul li:hover{
     background-color: black;
     color: white;
@@ -146,6 +147,7 @@ ul li a:hover{
 }
 .week img{
     height: 70px;
+    margin-bottom: 15px;
     /* width: 50px; */
 }
 .temp{
@@ -155,6 +157,7 @@ ul li a:hover{
 .temp p{
     font-weight: bold;
     font-size: large;
+    /* bottom:20px; */
 }
 .today{
     height: 150px;
@@ -167,6 +170,7 @@ ul li a:hover{
 }
 .today img{
     height: 70px;
+    margin-bottom:15px;
     /* width: 50px; */
 }
 .today-report{

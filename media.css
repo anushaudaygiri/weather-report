@@ -1,10 +1,10 @@
 @media screen and  (min-device-width: 425px) and (max-device-width:767px) {
 
-    #slide img{
-        height: 100px;
-        width: 100px;
-        margin: 15px 20px;
-     } 
+#slide img{
+    height: 100px;
+    width: 100px;
+    margin: 15px 20px;
+} 
     #search{
    padding: 10px;
    margin: 5px;
@@ -84,7 +84,8 @@ button{
 .temparature{
     
     padding-left: 10px;
-}.temparature #temp{
+}
+.temparature #temp{
     font-size:40px ;
     
 
@@ -99,14 +100,14 @@ button{
     
   }
   @media screen and  (min-device-width: 320px) and (max-device-width:425px){
-    #slide img{
-        height: 50px;
-        width: 50px;
-        margin: 10px 15px;
-     }
+ #slide img{
+    height: 50px;
+    width: 50px;
+    margin: 10px 15px;
+}
    
    
-    #search{
+ #search{
    padding: 5px;
    margin: 5px;
 }
