@@ -97,7 +97,7 @@ function getWeatherData(city, week = false) {
 
             location1.innerText = data.resolvedAddress
             condition.innerText = today.conditions;
-today_temperature.innerText=today.temp
+            today_temperature.innerText=today.temp
 
             rain.innerText = "Perc - " + today.precip + "%";
             //calling the weather data functions

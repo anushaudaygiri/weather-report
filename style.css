@@ -136,7 +136,7 @@ ul li a:hover{
     background-color: black;
     color: white;
 }
-.active{
+ #temperature-unit .active{
     color:white;
     background-color: black;
 }
