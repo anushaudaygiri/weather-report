@@ -1,7 +1,7 @@
 let date = document.getElementById("date_time");
 let currentTab = "week";
 
-
+//to display the required tab
 function toggleTab(tabName, currentCity = null) {
     currentTab = tabName
     const tabId = tabName + 'Tab'
@@ -45,6 +45,7 @@ date.innerText = getDate();
 setInterval(() => {
     date.innerText = getDate();
 }, 1000);
+
 //set the date and time for the current data and time
 let location1 = document.querySelector(".location-name")
 let condition=document.getElementById("condition")
@@ -53,6 +54,7 @@ let searchForm = document.getElementById("search")
 let mainIcon=document.getElementById("today_cloud")
 let today_temperature=document.getElementById("temp")
 let currentCity = ""
+
 //function to get the cuurent city
 function getPublicIp() {
     fetch("https://geolocation-db.com/json/", {
@@ -78,7 +80,7 @@ getPublicIp()
 // function to get weather data
 function getWeatherData(city, week = false) {
     fetch(
-        // `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=EJ6UBL2JEQGYB3AA4ENASN62J&contentType=json`,
+        
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}%7Bcity%7D?unitGroup=metric&key=PXHK7UTJZM6PNWFM9UYC4NDY8&contentType=json`,
  
         {
@@ -104,7 +106,6 @@ today_temperature.innerText=today.temp
             getSunsetSunrise(today)
             getHumidity(today)
             getVisibility(today)
-            // getVisibility(today)
             updateAirQualityStatus(today);
             mainIcon.src = getIcon(today.icon);
             changeBackground(today.icon);
@@ -123,15 +124,7 @@ today_temperature.innerText=today.temp
           })
  }
 
-// function getTodayTemperature() {
-//     let search = document.getElementById("place");
-//     console.log("getTodayTemperature search", search)
-// }
 
-// function getWeeklyTemperature() {
-//     let search = document.getElementById("place");
-//     console.log("getTodayTemperature search", search)
-// }
 
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -142,6 +135,7 @@ searchForm.addEventListener("submit", (e) => {
         getWeatherData(location, currentTab === "week");
     }
 });
+
 // function to change slide today icon
 function getIcon(condition) {
     if (condition === "partly-cloudy-day") {
@@ -182,7 +176,7 @@ function getIcon(condition) {
 
 // function to change week temperature 
 function weekTemperature(week) {
-    console.log("hii")
+   
     
     let day = week.map((temp) => {
          return temp.temp
@@ -323,6 +317,7 @@ function updateAirQualityStatus(today) {
       airQualityStatus.innerText = "Hazardous😱";
     }
   }
+
 //   function to change week temeprature
 function getHoursTemperature(data) {
     let temp = data.map((temp) => {
@@ -338,10 +333,9 @@ for (var i = 0; i < celsiusElements.length; i++) {
     celsiusElements[i].innerText = "°C";
 }
 
-// Get the temperature unit elements
 
 
-    // Loop through each hour div and set the temperature value
+ // Loop through each hour div and set the temperature value
 for (var i = 1; i <= 24; i++) {
     var hourElement = document.querySelector("#hour" + i + " p");
     if (hourElement) {
@@ -393,6 +387,10 @@ for (var i = 1; i <= 24; i++) {
     let fahrenheit=document.getElementById("fahrenhiet")
 
     celsius.addEventListener("click",()=>{
+        celsius.classList.add('active')
+        fahrenheit.classList.remove('active')
+        
+        
         let temp = data.map((temp) => {
             return temp.temp
         })
@@ -428,8 +426,9 @@ for (var i = 1; i <= 24; i++) {
 
 
     fahrenheit.addEventListener("click",()=>{
-        // fahrenheit.classList.add("active")
-        // celsius.classList.remove("active")
+        fahrenheit.classList.add('active')
+        celsius.classList.remove('active')
+        
         let day = week.map((temp) => {
             return temp.temp
         })
@@ -451,12 +450,13 @@ for (var i = 1; i <= 24; i++) {
             hourElement.innerText = celsiusToFahrenheit(temp[i-1]).toFixed();
         }
     }
+
        var celsiusElements = document.getElementsByClassName("fahrenCelsius");
    // Loop through each celsius element
    for (var i = 0; i < celsiusElements.length; i++) {
        // Set the inner text of each celsius element to "°C"
        celsiusElements[i].innerText = "°F";
    }
-   today_temperature.innerText= celsiusToFahrenheit(today).toFixed();
+   today_temperature.innerText= celsiusToFahrenheit(today).toFixed(3);
     })
   }
